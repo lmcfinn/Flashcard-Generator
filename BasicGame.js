@@ -5,7 +5,7 @@ var inquirer = require("inquirer");
 //Create content for the flash cards
 var questions = [
 	"Who was the first president of the United States?",
-	"What city was the first U.S. captial?",
+	"What city was the first U.S. capital?",
 	"What year was the U.S. Constitution ratified?",
 	"Who was the first Secretary of Treasury?"
 ];
