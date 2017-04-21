@@ -13,5 +13,5 @@ BasicCard.prototype.printInfo = function() {
 	console.log("Correct answer: " + this.back)
 }
 
-
+//Export the module
 module.exports = BasicCard;
