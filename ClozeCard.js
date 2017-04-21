@@ -1,43 +1,56 @@
 var inquirer = require("inquirer");
 
+//Build the constructor
 function ClozeCard(options) {
-	this.cloze = options.cloze;
-	this.partial = options.partial;
+
 	this.fullText = options.fullText;
+	this.cloze = options.cloze;
+	this.partial = options.fullText.replace(this.cloze, '...');
 }
 
-ClozeCard.prototype.printCloze = function() {
-	console.log(this.cloze)
-};
+ClozeCard.prototype.printErr = function(){
 
-ClozeCard.prototype.printPartial = function() {
-	console.log(this.partial)
-};
+	console.log("Wrong answer!");
+}
 
-ClozeCard.prototype.printFull = function() {
-	console.log(this.fullText)
-};
-
-ClozeCard.prototype.printWrong = function() {
-	console.log("Oops. Wrong answer.")
-};
-
-
+//Create a new object
 var firstPresident = new ClozeCard({
 	cloze: "George Washington",
-	partial: "... was the first president of the United States.",
-	fullText: "George Washington was the president of the United States."
+	fullText: "George Washington was the first President of the United States."
 });
 
-if (process.argv[2] == "cloze") {
-	firstPresident.printCloze();
-}
+//Test if the construtor works
+// console.log(firstPresident.fullText)
+// console.log(firstPresident.cloze)
+// console.log(firstPresident.partial)
 
-if (process.argv[2] == "partial") {
-	firstPresident.printPartial();
-}
+//Create a function using npm inquirer
+function askQuestions(){
 
-if (process.argv[2] == "full") {
-	firstPresident.printFull();
-}
+	inquirer.prompt([
+
+		{
+			type: "input",
+			name: "userGuess",
+			message: firstPresident.partial
+		},
+	]).then(function(answers){
+		if (answers.userGuess == firstPresident.cloze) {
+
+			console.log("Correct!" + "\n" + firstPresident.fullText)
+		
+		} else{
+
+			firstPresident.printErr()
+		}
+	})
+
+ };
+
+ askQuestions();
+
+
+
+
+
 
