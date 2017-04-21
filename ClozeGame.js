@@ -10,7 +10,7 @@ var statements =[
 	},
 	{
 		cloze: "Philadelphia",
-		fullText: "Philadelphiawas the first U.S. capital."
+		fullText: "Philadelphia was the first U.S. capital."
 	},
 	{
 		cloze: "1788",
