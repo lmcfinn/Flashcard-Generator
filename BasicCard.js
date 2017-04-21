@@ -1,6 +1,8 @@
 // var inquirer = require("inquirer");
 
 //Basic Card
+
+//Build the constructor
 function BasicCard(options) {
 	this.front = options.front;
 	this.back = options.back;

@@ -3,6 +3,7 @@
 //Build the constructor
 function ClozeCard(options) {
 
+	//Scope safe contructor
 	if (this instanceof ClozeCard) {
 
 		this.fullText = options.fullText;
@@ -20,6 +21,7 @@ ClozeCard.prototype.printErr = function(){
 	console.log("Oops..." + "\n" + this.fullText);
 }
 
+//Export the module
 module.exports = ClozeCard;
 
 

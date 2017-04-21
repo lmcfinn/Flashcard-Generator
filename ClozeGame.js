@@ -1,7 +1,7 @@
 var ClozeCard = require("./ClozeCard");
 var inquirer = require("inquirer");
 
-
+//Create content for the cloze flash cards
 var statements =[
 
 	{
@@ -25,13 +25,16 @@ var statements =[
 
 // console.log(statements[1].cloze)
 
+//Create an array to house the new objects
 var finalQ = [];
 
+//Loop thru all the statements
 for (var i = 0; i < statements.length; i++) {
 	var question = ClozeCard({
 		cloze: statements[i].cloze, 
 		fullText: statements[i].fullText
 	});
+	//Push new objects to the array
 	finalQ.push(question);
 }
 
@@ -40,6 +43,7 @@ for (var i = 0; i < statements.length; i++) {
 
 var count = 0;
 
+//Create function to prompt the questions
 function askQuestions() {
 
 	if (count < 4) {
@@ -63,5 +67,6 @@ function askQuestions() {
 	}
 };
 
+//Call the function
 askQuestions();
 
