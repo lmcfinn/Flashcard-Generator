@@ -60,8 +60,8 @@ function askQuestions() {
 		} else{
 			finalQ[count].printErr()
 		}
-			count++; 
-			askQuestions();
+		count++; 
+		askQuestions();
 
 		});
 	}
